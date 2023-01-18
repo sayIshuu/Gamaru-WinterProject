@@ -5,34 +5,37 @@ using UnityEngine.UI;
 
 public class HeartManager : MonoBehaviour
 {
-    [SerializeField] int Heart;
     [SerializeField] int MaxHeart;
-
     [SerializeField] Image[] hearts;
     [SerializeField] Sprite isFull;
     [SerializeField] Sprite isEmpty;
-
-    private void Update()
+    private int heart;
+    public int Heart
     {
-        for (int i = 0; i < hearts.Length; i++)
+        get { return heart; }
+        set
         {
-            if(i < Heart)
+            for (int i = 0; i < hearts.Length; i++)
             {
-                hearts[i].sprite = isFull;
-            }
-            else
-            {
-                hearts[i].sprite = isEmpty;
-            }
+                if (i < heart)
+                {
+                    hearts[i].sprite = isFull;
+                }
+                else
+                {
+                    hearts[i].sprite = isEmpty;
+                }
 
-            if (i < MaxHeart)
-            {
-                hearts[i].enabled = true;
+                if (i < MaxHeart)
+                {
+                    hearts[i].enabled = true;
+                }
+                else
+                {
+                    hearts[i].enabled = false;
+                }
             }
-            else
-            {
-                hearts[i].enabled = false;
-            }
+            heart = value; 
         }
     }
 }
