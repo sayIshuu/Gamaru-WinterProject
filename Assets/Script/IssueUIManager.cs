@@ -6,8 +6,8 @@ public class IssueUIManager : MonoBehaviour
 {
     [SerializeField] GameObject IssuePanel;
 
-    public void LoadIssuePanel()
+    public void BackToMainUI()
     {
-        IssuePanel.SetActive(true);
+        IssuePanel.SetActive(false);
     }
 }
