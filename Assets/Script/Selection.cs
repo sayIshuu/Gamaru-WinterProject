@@ -11,4 +11,20 @@ public class Selection
     private int selectionNum;
     [SerializeField]
     private Action action;
+
+    public string getText()
+    {
+        return text;
+    }
+
+    public string getSelectionNum()
+    {
+        return text;
+    }
+
+    public Action getAction()
+    {
+        return action;
+    }
+
 }
