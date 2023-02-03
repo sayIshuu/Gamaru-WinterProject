@@ -43,6 +43,7 @@ public class HungerBar : MonoBehaviour
     void Start()
     {
         hungerBar.value = ((float)curHunger) / (float)maxHunger;
+        //Debug.Log(hungerBar.value);
     }
 
 }
