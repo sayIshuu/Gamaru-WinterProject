@@ -6597,8 +6597,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6615,10 +6615,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -6626,8 +6626,8 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_wordSpacing: 10
+  m_lineSpacing: 50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -7336,8 +7336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e500fe4a85d934b96c18adccae9249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollRect: {fileID: 555873870}
-  textMeshPro: {fileID: 964137525}
+  mainText: {fileID: 964137525}
 --- !u!4 &1107458572
 Transform:
   m_ObjectHideFlags: 0
@@ -12308,6 +12307,7 @@ MonoBehaviour:
         actionTempletes:
         - actionName: aaa
           actionParam: 2
+  eventManager: {fileID: 1107458571}
 --- !u!4 &2026281844
 Transform:
   m_ObjectHideFlags: 0

@@ -57,12 +57,18 @@ public class Action
     // onClick 연결 함수
     public void startAction()
     {
+        // hpChange등 액션들 실행.
         for(int i = 0; i < actionDelegates.Count; i++)
         {
             ActionDelegate actionDelegate = actionDelegates[i];
             //함수호출.. ex) hpChange, moneyChange...
             actionDelegate(paramList[i]);
         }
+
+        // 이벤트 이동.
+
+
+
         // 더 추가할 내용.
         // 이벤트 이동
         // nextEventName이랑 ID를 이용해서 ㄲ
@@ -72,3 +78,4 @@ public class Action
 // EventDB에 값 채워넣기
 // onclick연결
 // 선택지 개수에따라 활성화
+

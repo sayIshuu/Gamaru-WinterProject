@@ -35,4 +35,9 @@ public class Event
     {
         return (Event) MemberwiseClone();
     }
+
+    public List<Selection> getSelections()
+    {
+        return selections;
+    }
 }
