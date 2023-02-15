@@ -57,6 +57,8 @@ public class Action
     // onClick 연결 함수
     public void startAction()
     {
+        EventManager.Instance.currentEventName = nextEventName;
+        EventManager.Instance.currentEventID = nextEventId;
         // hpChange등 액션들 실행.
         for(int i = 0; i < actionDelegates.Count; i++)
         {
@@ -64,14 +66,8 @@ public class Action
             //함수호출.. ex) hpChange, moneyChange...
             actionDelegate(paramList[i]);
         }
-
         // 이벤트 이동.
-
-
-
-        // 더 추가할 내용.
-        // 이벤트 이동
-        // nextEventName이랑 ID를 이용해서 ㄲ
+        EventManager.Instance.eventStart(EventDB.Instance.events.Find(x => x.getEventName() == EventManager.Instance.currentEventName && x.getEventID() == EventManager.Instance.currentEventNameID));
     }
 }
 

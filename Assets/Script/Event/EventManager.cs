@@ -46,13 +46,13 @@ public class EventManager : MonoBehaviour
     private TMP_Text subjectText;
 
     public string currentEventName;
-    public int currentEventNameID;
+    public int currentEventID;
 
     //private EventDB eventDB;
     private void Start()
     {
         currentEventName = "튜토리얼";
-        currentEventNameID = 1;
+        currentEventID = 1;
         //EventDB.eventArray
         //선택지버튼 누르면 여기있는 함수 가져온다.
         //eventStart(eventDB.events.Find(x => x.getEventName() == "튜토리얼" && x.getEventID() == 1));
@@ -70,11 +70,11 @@ public class EventManager : MonoBehaviour
 
         // selectionUI 에 selection 객체 뿌리기
         // selectionUpdate 이용!!
+        SelectionUI.Instance.selectionSetting();
         foreach(Selection selection in newEvent.getSelections())
         {
             SelectionUI.Instance.selectionUpdate(selection);
         }
-
     }
     //onClick에 두개 함수 연결. 액션실행이랑 텍스트뿌리는거..아니면 액션실행에 이 eventStart함수를 넣어둬도 괜찮.
 }

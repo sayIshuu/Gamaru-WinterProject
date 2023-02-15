@@ -41,24 +41,37 @@ public class SelectionUI : MonoBehaviour
 
     private Action action;
 
+    public void selectionSetting()
+    {
+        selSlot_1.SetActive(false);
+        selSlot_2.SetActive(false);
+        selSlot_3.SetActive(false);
+        selSlot_4.SetActive(false);
+    }
+
+
     // 선택지 업데이트 함수
     public void selectionUpdate(Selection changedSelection)
     {
         if(changedSelection.getSelectionNum() == 1)
         {
-            selSlot_1.GetComponent<Text>().text = changedSelection.getText();
+            selSlot_1.SetActive(true);
+            selSlot_1.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
         }
         else if(changedSelection.getSelectionNum() == 2)
         {
-            selSlot_2.GetComponent<Text>().text = changedSelection.getText();
+            selSlot_2.SetActive(true);
+            selSlot_2.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
         }
         else if (changedSelection.getSelectionNum() == 3)
         {
-            selSlot_3.GetComponent<Text>().text = changedSelection.getText();
+            selSlot_3.SetActive(true);
+            selSlot_3.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
         }
         else if (changedSelection.getSelectionNum() == 4)
         {
-            selSlot_4.GetComponent<Text>().text = changedSelection.getText();
+            selSlot_4.SetActive(true);
+            selSlot_4.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
         }
 
         // 해당 선택지에 맞는 액션 세팅
