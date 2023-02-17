@@ -10,6 +10,9 @@ scopes = {
 	"last_search.8C24D059" = "Gizmos"
 	"OpenInspectorPreview.8C24D059" = "0"
 	"currentGroup.8C24D059" = "all"
+	"last_search.8BEC98E7" = "ref:Assets/Script/Event/SelectionUI.cs"
+	"OpenInspectorPreview.8BEC98E7" = "0"
+	"currentGroup.8BEC98E7" = "scene"
 }
 providers = {
 	adb = {
@@ -56,6 +59,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"ref:Assets/Script/Event/SelectionUI.cs"
 	"G"
 ]
 searchItemFavorites = [

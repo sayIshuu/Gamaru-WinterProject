@@ -15,6 +15,8 @@ public class EventManager : MonoBehaviour
     {
         if (null == instance)
         {
+            currentEventName = "튜토리얼";
+            currentEventID = 1;
             instance = this;
 
             DontDestroyOnLoad(this.gameObject);
@@ -51,8 +53,6 @@ public class EventManager : MonoBehaviour
     //private EventDB eventDB;
     private void Start()
     {
-        currentEventName = "튜토리얼";
-        currentEventID = 1;
         //EventDB.eventArray
         //선택지버튼 누르면 여기있는 함수 가져온다.
         //eventStart(eventDB.events.Find(x => x.getEventName() == "튜토리얼" && x.getEventID() == 1));
@@ -61,9 +61,6 @@ public class EventManager : MonoBehaviour
     // 이벤트 발동
     public void eventStart(Event newEvent)
     {
-        // 이벤트 가져옴.. 여기에 현재 eventName, eventID정보 저장되어있음.
-        //Event currentEvent = newEvent.getThisEvent();
-
         subjectText.text = newEvent.getEventName();
         // 이벤트 텍스트 교체
         mainText.text = newEvent.getEventText();
@@ -76,5 +73,4 @@ public class EventManager : MonoBehaviour
             SelectionUI.Instance.selectionUpdate(selection);
         }
     }
-    //onClick에 두개 함수 연결. 액션실행이랑 텍스트뿌리는거..아니면 액션실행에 이 eventStart함수를 넣어둬도 괜찮.
 }

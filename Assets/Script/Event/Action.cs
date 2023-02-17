@@ -67,7 +67,7 @@ public class Action
             actionDelegate(paramList[i]);
         }
         // 이벤트 이동.
-        EventManager.Instance.eventStart(EventDB.Instance.events.Find(x => x.getEventName() == EventManager.Instance.currentEventName && x.getEventID() == EventManager.Instance.currentEventNameID));
+        EventManager.Instance.eventStart(EventDB.Instance.events.Find(x => x.getEventName() == EventManager.Instance.currentEventName && x.getEventID() == EventManager.Instance.currentEventID));
     }
 }
 

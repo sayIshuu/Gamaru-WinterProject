@@ -41,5 +41,6 @@ public class EventDB : MonoBehaviour
     void Start()
     {
         EventManager.Instance.eventStart(events.Find(x => x.getEventName() == EventManager.Instance.currentEventName && x.getEventID() == EventManager.Instance.currentEventID));
+        Debug.Log("코드블록이 계속 쌓이는데..?");
     }
 }

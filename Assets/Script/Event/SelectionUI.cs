@@ -35,8 +35,7 @@ public class SelectionUI : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private GameObject selSlot_1, selSlot_2, selSlot_3, selSlot_4;
+    public GameObject selSlot_1, selSlot_2, selSlot_3, selSlot_4;
 
 
     private Action action;
