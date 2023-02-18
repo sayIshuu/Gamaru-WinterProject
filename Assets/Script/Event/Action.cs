@@ -23,20 +23,14 @@ public class Action
 
     public int nextEventId;
 
-    public List<ActionTemplete> actionTempletes;
+    public List<ActionTemplete> actionTempletes = new List<ActionTemplete>();
 
     private List<ActionDelegate> actionDelegates = new List<ActionDelegate>();
 
-    private List<string> paramList;
-
-    public Action getAction()
-    {
-        return (Action)MemberwiseClone();
-    }
+    private List<string> paramList = new List<string>();
 
     public void setAction(Action action)
     {
-        Debug.Log("셋액션 실행");
         // 이전 선택지의 델리게이트랑 매개변수 초기화
         actionDelegates.Clear();
         paramList.Clear();
@@ -49,9 +43,9 @@ public class Action
         actionTempletes = action.actionTempletes;
         // 액션 템플릿들의 정보를 실제 델리게이트와 매개변수 리스트에 넣어준다.
         foreach(ActionTemplete actionTemplete in actionTempletes)
-        {
+        {          
             // 인스팩터에서 넣은 액션의 이름과 수치를 델리게이트 리스트(actionDelegates)에 넣는다.
-            ActionDelegate actionAction = ActionDB.getActionDelegate(actionTemplete.actionName);
+            ActionDelegate actionAction = ActionDB.Instance.getActionDelegate(actionTemplete.actionName);
             actionDelegates.Add(actionAction);
             paramList.Add(actionTemplete.actionParam);
         }
