@@ -56,24 +56,29 @@ public class SelectionUI : MonoBehaviour
         {
             selSlot_1.SetActive(true);
             selSlot_1.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
+            // 해당 선택지에 맞는 액션 세팅
+            changedSelection.getAction().setAction(changedSelection.getAction());
         }
         else if(changedSelection.getSelectionNum() == 2)
         {
             selSlot_2.SetActive(true);
             selSlot_2.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
+            // 해당 선택지에 맞는 액션 세팅
+            action.setAction(changedSelection.getAction());
         }
         else if (changedSelection.getSelectionNum() == 3)
         {
             selSlot_3.SetActive(true);
             selSlot_3.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
+            // 해당 선택지에 맞는 액션 세팅
+            action.setAction(changedSelection.getAction());
         }
         else if (changedSelection.getSelectionNum() == 4)
         {
             selSlot_4.SetActive(true);
             selSlot_4.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
+            // 해당 선택지에 맞는 액션 세팅
+            action.setAction(changedSelection.getAction());
         }
-
-        // 해당 선택지에 맞는 액션 세팅
-        action.setAction(changedSelection.getAction());
     }
 }

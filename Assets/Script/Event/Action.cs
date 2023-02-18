@@ -7,11 +7,13 @@ public class ActionTemplete
 {
     public string actionName;
     public string actionParam;
+    /*
     public ActionTemplete(string _actionName, string _actionParam)
     {
         actionName = _actionName;
         actionParam = _actionParam;
     }
+    */
 }
 
 [System.Serializable]
@@ -27,8 +29,14 @@ public class Action
 
     private List<string> paramList;
 
+    public Action getAction()
+    {
+        return (Action)MemberwiseClone();
+    }
+
     public void setAction(Action action)
     {
+        Debug.Log("셋액션 실행");
         // 이전 선택지의 델리게이트랑 매개변수 초기화
         actionDelegates.Clear();
         paramList.Clear();
@@ -49,11 +57,6 @@ public class Action
         }
     }
 
-    public Action getAction()
-    {
-        return this;
-    }
-
     // onClick 연결 함수
     public void startAction()
     {
@@ -70,8 +73,3 @@ public class Action
         EventManager.Instance.eventStart(EventDB.Instance.events.Find(x => x.getEventName() == EventManager.Instance.currentEventName && x.getEventID() == EventManager.Instance.currentEventID));
     }
 }
-
-// EventDB에 값 채워넣기
-// onclick연결
-// 선택지 개수에따라 활성화
-

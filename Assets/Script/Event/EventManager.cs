@@ -50,14 +50,6 @@ public class EventManager : MonoBehaviour
     public string currentEventName;
     public int currentEventID;
 
-    //private EventDB eventDB;
-    private void Start()
-    {
-        //EventDB.eventArray
-        //선택지버튼 누르면 여기있는 함수 가져온다.
-        //eventStart(eventDB.events.Find(x => x.getEventName() == "튜토리얼" && x.getEventID() == 1));
-    }
-
     // 이벤트 발동
     public void eventStart(Event newEvent)
     {

@@ -22,7 +22,7 @@ public class ActionDB : MonoBehaviour
 
     private void hpChange(string hp)
     {
-        print(hp);
+        Debug.Log(hp);
     }
 
     public static ActionDelegate getActionDelegate(string actionName)
