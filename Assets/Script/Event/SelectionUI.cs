@@ -7,30 +7,23 @@ using TMPro;
 public class SelectionUI : MonoBehaviour
 {
     private static SelectionUI instance = null;
-
     void Awake()
     {
         if (null == instance)
         {
             instance = this;
-
             DontDestroyOnLoad(this.gameObject);
         }
         else
-        {
             Destroy(this.gameObject);
-        }
     }
-
     //게임 매니저 인스턴스에 접근할 수 있는 프로퍼티. static이므로 다른 클래스에서 맘껏 호출할 수 있다.
     public static SelectionUI Instance
     {
         get
         {
             if (null == instance)
-            {
                 return null;
-            }
             return instance;
         }
     }
@@ -38,7 +31,10 @@ public class SelectionUI : MonoBehaviour
     public GameObject selSlot_1, selSlot_2, selSlot_3, selSlot_4;
 
 
-    private Action action = new Action();
+    private Action action1 = new Action();
+    private Action action2 = new Action();
+    private Action action3 = new Action();
+    private Action action4 = new Action();
 
     public void selectionSetting()
     {
@@ -57,30 +53,42 @@ public class SelectionUI : MonoBehaviour
             selSlot_1.SetActive(true);
             selSlot_1.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
             // 해당 선택지에 맞는 액션 세팅
-            action.setAction(changedSelection.getAction());
+            action1.setAction(changedSelection.getAction());
         }
         else if(changedSelection.getSelectionNum() == 2)
         {
             selSlot_2.SetActive(true);
             selSlot_2.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
-            action.setAction(changedSelection.getAction());
+            action2.setAction(changedSelection.getAction());
         }
         else if (changedSelection.getSelectionNum() == 3)
         {
             selSlot_3.SetActive(true);
             selSlot_3.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
-            action.setAction(changedSelection.getAction());
+            action3.setAction(changedSelection.getAction());
         }
         else if (changedSelection.getSelectionNum() == 4)
         {
             selSlot_4.SetActive(true);
             selSlot_4.GetComponentInChildren<TextMeshProUGUI>().text = changedSelection.getText();
-            action.setAction(changedSelection.getAction());
+            action4.setAction(changedSelection.getAction());
         }
     }
 
-    public void selectionClick()
+    public void selectionClick1()
     {
-        action.startAction();
+        action1.startAction();
+    }
+    public void selectionClick2()
+    {
+        action2.startAction();
+    }
+    public void selectionClick3()
+    {
+        action3.startAction();
+    }
+    public void selectionClick4()
+    {
+        action4.startAction();
     }
 }

@@ -5,6 +5,28 @@ using UnityEngine.UI;
 
 public class HeartManager : MonoBehaviour
 {
+    private static HeartManager instance = null;
+    void Awake()
+    {
+        if (null == instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+            Destroy(this.gameObject);
+    }
+    //게임 매니저 인스턴스에 접근할 수 있는 프로퍼티. static이므로 다른 클래스에서 맘껏 호출할 수 있다.
+    public static HeartManager Instance
+    {
+        get
+        {
+            if (null == instance)
+                return null;
+            return instance;
+        }
+    }
+
     [SerializeField] Image[] hearts;
     [SerializeField] Sprite isFill;
     [SerializeField] Sprite isEmpty;
@@ -44,7 +66,6 @@ public class HeartManager : MonoBehaviour
         }
     }
 
-
     private int max_heart;
     public int Max_Heart
     {
@@ -54,7 +75,6 @@ public class HeartManager : MonoBehaviour
             max_heart = value;
         }
     }
-
 
 
     private void Start()

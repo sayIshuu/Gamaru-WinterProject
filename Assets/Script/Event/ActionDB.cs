@@ -43,12 +43,17 @@ public class ActionDB : MonoBehaviour
 
     private void hpChange(string hp)
     {
-        Debug.Log(hp);
+        HeartManager.Instance.Heart += int.Parse(hp);
+    }
+
+    private void maxHpChange(string hp)
+    {
+        HeartManager.Instance.Max_Heart += int.Parse(hp);
     }
 
     void Start()
     {
-        actionDB.Add(nameof(moneyChange), moneyChange);
+        actionDB.Add("maxHpChange", maxHpChange);
         actionDB.Add("hpChange", hpChange);
     }
 
