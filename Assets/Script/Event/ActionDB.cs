@@ -6,6 +6,7 @@ public delegate void ActionDelegate(string param);
 
 public class ActionDB : MonoBehaviour
 {
+
     private static ActionDB instance = null;
     void Awake()
     {
@@ -34,11 +35,17 @@ public class ActionDB : MonoBehaviour
     }
 
 
+
     private Dictionary<string, ActionDelegate> actionDB;
 
-    private void moneyChange(string money)
+    //Çë°Å´Â ÃÖ´ë 100
+    private void useCalroli(string calroli)
     {
-        print(money);
+        HungerBar.Instance.HungerDown(float.Parse(calroli));
+    }
+    private void eat(string calroli)
+    {
+        HungerBar.Instance.HungerUp(float.Parse(calroli));
     }
 
     private void hpChange(string hp)
@@ -50,11 +57,37 @@ public class ActionDB : MonoBehaviour
     {
         HeartManager.Instance.Max_Heart += int.Parse(hp);
     }
+    
+    private void addItem(string itemAndnum)
+    {
+        string[] result = itemAndnum.Split(new char[] { 'X' });
+        if (RecipeUIManager.Instance.ingredientDB.ContainsKey(result[0]))
+        {
+            RecipeUIManager.Instance.ingredientDB[result[0]] += int.Parse(result[1]);
+        }
+        else
+        {
+            RecipeUIManager.Instance.ingredientDB.Add(result[0], int.Parse(result[1]));
+        }
+    }
+    private void useItem(string itemAndnum)
+    {
+        string[] result = itemAndnum.Split(new char[] { 'X' });
+        RecipeUIManager.Instance.ingredientDB[result[0]] -= int.Parse(result[1]);
+        if (RecipeUIManager.Instance.ingredientDB[result[0]] == 0)
+        {
+            RecipeUIManager.Instance.ingredientDB.Remove(result[0]);
+        }
+    }
+
 
     void Start()
     {
         actionDB.Add("maxHpChange", maxHpChange);
         actionDB.Add("hpChange", hpChange);
+        actionDB.Add("eat", eat);
+        actionDB.Add("useCalroli", useCalroli);
+        actionDB.Add("addItem", addItem);
     }
 
     public ActionDelegate getActionDelegate(string actionName)
