@@ -36,25 +36,27 @@ public class RecipeUIManager : MonoBehaviour
     [SerializeField] GameObject ingredientPrefab;
     [SerializeField] GameObject ingredientContent;
 
-    //public Inventory_Slot[] inventory_Slots;
-    //public Transform slotHolder;
 
     public Dictionary<string, int> ingredientDB = new Dictionary<string, int>();
-    
 
-
+    List<GameObject> newobj = new List<GameObject>();
+    public void setIngredient()
+    {
+        foreach (var ingredient in ingredientDB)
+        {
+            GameObject temp = Instantiate(ingredientPrefab, ingredientContent.transform);
+            temp.GetComponentInChildren<TextMeshProUGUI>().text = ingredient.Key + ingredient.Value.ToString();
+            newobj.Add(temp);
+        }
+    }
 
 
     public void BackToMain()
     {
         RecipePanel.SetActive(false);
-        //Instantiate(ingredientPrefab, ingredientContent.transform);
-    }
-
-
-    private void Start()
-    {
-        //inventory_Slots = slotHolder.GetComponentsInChildren<Inventory_Slot>();
-        
+        foreach(var ingredient in newobj)
+        {
+            Destroy(ingredient);
+        }
     }
 }

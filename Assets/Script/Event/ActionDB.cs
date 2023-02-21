@@ -80,6 +80,15 @@ public class ActionDB : MonoBehaviour
         }
     }
 
+    private void getIssue(string issue)
+    {
+        IssueUIManager.Instance.issues.Add(issue);
+    }
+    private void loseIssue(string issue)
+    {
+        IssueUIManager.Instance.issues.Remove(issue);
+    }
+
 
     void Start()
     {
@@ -88,6 +97,10 @@ public class ActionDB : MonoBehaviour
         actionDB.Add("eat", eat);
         actionDB.Add("useCalroli", useCalroli);
         actionDB.Add("addItem", addItem);
+        addItem("檜熱團鎬鎬X2");
+        addItem("檜熱團氅窖檜X1");
+        getIssue("詣爵檜и熱雙");
+        getIssue("檜熱團 罹耀");
     }
 
     public ActionDelegate getActionDelegate(string actionName)

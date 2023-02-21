@@ -18,6 +18,7 @@ public class MainUIManager : MonoBehaviour
 
     public void LoadIssuePanel()
     {
+        IssueUIManager.Instance.setIssues();
         IssuePanel.SetActive(true);
     }
 
@@ -28,6 +29,7 @@ public class MainUIManager : MonoBehaviour
 
     public void LoadRecipePanel()
     {
+        RecipeUIManager.Instance.setIngredient();
         RecipePanel.SetActive(true);
     }
 }

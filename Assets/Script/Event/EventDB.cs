@@ -6,7 +6,6 @@ using TMPro;
 public class EventDB : MonoBehaviour
 {
     private static EventDB instance = null;
-
     void Awake()
     {
         if (null == instance)
@@ -20,7 +19,6 @@ public class EventDB : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
     //게임 매니저 인스턴스에 접근할 수 있는 프로퍼티. static이므로 다른 클래스에서 맘껏 호출할 수 있다.
     public static EventDB Instance
     {
@@ -33,7 +31,6 @@ public class EventDB : MonoBehaviour
             return instance;
         }
     }
-
 
 
     public List<Event> events;
