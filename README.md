@@ -1,4 +1,4 @@
-## 나혼스푸파
+## 나혼스푸파 프로토타입
 https://user-images.githubusercontent.com/78731710/224471103-2ced3947-0919-4421-bd61-a4ac4f208e52.mp4
 
 <br/>
