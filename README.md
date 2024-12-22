@@ -1,6 +1,11 @@
 ## 나혼스푸파 프로토타입
 
 
+
+https://github.com/user-attachments/assets/6d13b92f-eaf6-4de3-9d44-9c282c6e0b1d
+
+
+
 <br/>
 
 |개발툴|플랫폼|
